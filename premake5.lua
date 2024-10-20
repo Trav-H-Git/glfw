@@ -1,11 +1,11 @@
-project "GLFW"
+project "glfw"
 	kind "StaticLib"
 	language "C"
     staticruntime "on"
 	--warnings "off"
 
-   targetdir ("build/bin/" .. OutputDir .. "/%{prj.name}")
-   objdir ("build/obj/" .. OutputDir .. "/%{prj.name}")
+	targetdir ("build/bin/" .. OutputDir )
+	objdir ("build/obj/" .. OutputDir )
 
    files
    {
@@ -110,7 +110,7 @@ project "GLFW"
 	   runtime "Debug"
 	   symbols "on"
 
-   filter { "system:windows", "configurations:Debug-AS" }	
+   filter { "system:windows" }	
 	   runtime "Debug"
 	   symbols "on"
 	   --sanitize { "Address" }
